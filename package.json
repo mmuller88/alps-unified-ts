@@ -105,7 +105,7 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.github.mmuller88.alps-unified-ts",
+        "package": "com.github.mmuller88.alpsUnifiedTs",
         "maven": {
           "groupId": "com.github.mmuller88",
           "artifactId": "alps-unified-ts"

@@ -103,7 +103,7 @@ Name | Type | Description
 **descriptor** | <code>Array<[DescriptorDefOuter](#alps-unified-ts-descriptordefouter)></code> | <span></span>
 **doc** | <code>[DocDef](#alps-unified-ts-docdef)</code> | <span></span>
 **ext** | <code>Array<[ExtDef](#alps-unified-ts-extdef)></code> | <span></span>
-**version** | <code>string</code> | <span></span>
+**version** | <code>string</code> | can be any string e.g.: 1.0.
 
 
 

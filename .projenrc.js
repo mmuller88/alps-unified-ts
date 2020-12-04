@@ -13,7 +13,7 @@ const project = new JsiiProject({
   deps: deps,
   bundledDeps: deps,
   java: {
-    javaPackage: 'com.github.mmuller88.alps-unified-ts',
+    javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
     mavenGroupId: 'com.github.mmuller88',
     mavenArtifactId: 'alps-unified-ts',
   },
