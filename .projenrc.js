@@ -22,7 +22,7 @@ const project = new TypeScriptProject({
     module: 'alps_unified_ts',
   },
   releaseBranches: ['master'],
-  // releaseToNpm: true,
+  releaseToNpm: true,
   keywords: [
     'cdk',
     'aws',
