@@ -28,6 +28,9 @@ const rxQ = /\?\?/g;
  * @param options
  */
 export function unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.openapi }): any {
+  if (alpsDocument === undefined) {
+    return undefined;
+  }
   let rtn = '';
   // process requested translation
   switch (options?.formatType) {
@@ -73,7 +76,7 @@ export function unified(alpsDocument: any, options: ConvertOptions = { formatTyp
 // ****************************************************
 // to WSDL
 // ****************************************************
-function toWSDL(doc: any) {
+function toWSDL(_doc: any) {
   let rtn = '';
 
   rtn += '<?xml version = \'1.0\' encoding = \'UTF-8\'?>\n';
@@ -106,7 +109,6 @@ function toJSON(doc: any) {
 // ****************************************************
 function toProto(doc: any) {
   var rtn = '';
-  var obj;
   var coll;
 
   // preamble
@@ -488,9 +490,6 @@ function update(doc: any) {
   return (doc.type === 'idempotent' && (doc.tags && doc.tags.indexOf('update')!=-1));
 }
 
-function metadata_id(doc: any) {
-  return (doc.type ==='metadata' && (doc.name && doc.name === ('id')));
-}
 function metadata_title(doc: any) {
   return (doc.type ==='metadata' && (doc.name && doc.name === ('title')));
 }
