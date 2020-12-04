@@ -72,7 +72,7 @@ export class Alps {
 
   /**
    * loads the ALPS document
-   * 
+   *
    * @param path ALPS spec file path
    */
   public static loadYaml(path: string) {
@@ -90,6 +90,35 @@ export class Alps {
       console.log(e);
     }
   }
+
+  public static spec(spec: AlpsSpec) {
+    return Object.assign({}, spec);
+  }
+}
+
+export interface AlpsSpec {
+  alps: {
+    version: string;
+    doc: {
+      value: string;
+    };
+    ext: {
+      type: string;
+      name: string;
+      value: string;
+      tags: string;
+    }[];
+    descriptor: {
+      id: string;
+      type: string;
+      rt?: string;
+      text: string;
+      tags?: string;
+      descriptor?: {
+        href: string;
+      }[];
+    }[];
+  };
 }
 
 // *******************************************
