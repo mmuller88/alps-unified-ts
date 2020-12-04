@@ -2,71 +2,72 @@
  * Convert option. So far only the format type
  */
 export interface ConvertOptions {
-  formatType: FormatType;
+  readonly formatType: FormatType;
 };
 
 /**
  * Format type to convert the ALPS spec into
  */
 export enum FormatType {
-  s, sdl,
-  a, async, asyncapi,
-  o, oas, open, openapi,
-  p, proto,
-  j, json,
-  w, wsdl, soap
+  S, SDL,
+  A, ASYNC, ASYNCAPI,
+  O, OAS, OPEN, OPENAPI,
+  P, PROTO,
+  J, JSON,
+  W, WSDL, SOAP
 };
 
 // cleanup regex
 const rxHash = /#/g;
 const rxQ = /\?\?/g;
 
-/**
- * Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema
- *
- * @param alpsDocument The ALPS spec in json
- * @param options
- */
-export function unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.openapi }): any {
-  if (alpsDocument === undefined) {
-    return undefined;
-  }
-  let rtn = '';
-  // process requested translation
-  switch (options?.formatType) {
-    case FormatType.s:
-    case FormatType.sdl:
-      rtn = toSDL(alpsDocument);
-      break;
-    case FormatType.a:
-    case FormatType.async:
-    case FormatType.asyncapi:
-      rtn = toAsync(alpsDocument);
-      break;
-    case FormatType.o:
-    case FormatType.oas:
-    case FormatType.open:
-    case FormatType.openapi:
-      rtn = toOAS(alpsDocument);
-      break;
-    case FormatType.p:
-    case FormatType.proto:
-      rtn = toProto(alpsDocument);
-      break;
-    case FormatType.j:
-    case FormatType.json:
-      rtn = toJSON(alpsDocument);
-      break;
-    case FormatType.w:
-    case FormatType.wsdl:
-    case FormatType.soap:
-      rtn = toWSDL(alpsDocument);
-      break;
-    default:
-      console.log(`ERROR: unknown format: ${options?.formatType}`);
-  }
+export class Alps {
 
-  return JSON.parse(rtn);
+  /**
+   * Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema
+   *
+   * @param alpsDocument The ALPS spec in json
+   * @param options Options for the convertion
+   * @return the requested api
+   */
+  public static unified(alpsDocument: string, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
+    let rtn = '';
+    // process requested translation
+    switch (options?.formatType) {
+      case FormatType.S:
+      case FormatType.SDL:
+        rtn = toSDL(alpsDocument);
+        break;
+      case FormatType.A:
+      case FormatType.ASYNC:
+      case FormatType.ASYNCAPI:
+        rtn = toAsync(alpsDocument);
+        break;
+      case FormatType.O:
+      case FormatType.OAS:
+      case FormatType.OPEN:
+      case FormatType.OPENAPI:
+        rtn = toOAS(alpsDocument);
+        break;
+      case FormatType.P:
+      case FormatType.PROTO:
+        rtn = toProto(alpsDocument);
+        break;
+      case FormatType.J:
+      case FormatType.JSON:
+        rtn = toJSON(alpsDocument);
+        break;
+      case FormatType.W:
+      case FormatType.WSDL:
+      case FormatType.SOAP:
+        rtn = toWSDL(alpsDocument);
+        break;
+      default:
+        console.log(`ERROR: unknown format: ${options?.formatType}`);
+    }
+    rtn;
+    return JSON.parse(rtn);
+  }
 }
 
 // *******************************************
