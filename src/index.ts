@@ -101,6 +101,10 @@ export interface AlpsSpec {
 }
 
 export interface AlpsDef {
+  /**
+   * can be any string
+   * e.g.: 1.0
+   */
   readonly version: string;
   readonly doc: DocDef;
   readonly ext: ExtDef[];

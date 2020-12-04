@@ -12,6 +12,11 @@ const project = new JsiiProject({
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   deps: deps,
   bundledDeps: deps,
+  java: {
+    javaPackage: 'com.github.mmuller88.alps-unified-ts',
+    mavenGroupId: 'com.github.mmuller88',
+    mavenArtifactId: 'alps-unified-ts',
+  },
   python: {
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',
