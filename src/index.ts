@@ -26,11 +26,13 @@ export class Alps {
   /**
    * Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema
    *
-   * @param alpsDocument The ALPS spec in json
+   * @param alpsSpec The ALPS spec file. Only YAML is supported
    * @param options Options for the convertion
-   * @return the requested api
+   * @return the requested api in string format
    */
-  public static unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
+  public static unified(alpsSpec: string, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
+
+    const alpsDocument = loadYaml(alpsSpec);
     let rtn = '';
     // process requested translation
     switch (options?.formatType) {
@@ -509,4 +511,20 @@ function rString(id: string) {
     rtn = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   }
   return rtn;
+}
+
+function loadYaml(path: string) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const fs = require('fs');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const yaml = require('js-yaml');
+
+  try {
+    let fileContents = fs.readFileSync(path, 'utf8');
+    let data = yaml.safeLoad(fileContents);
+    // console.log(JSON.stringify(data));
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
 }

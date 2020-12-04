@@ -19,3 +19,7 @@ Want to know more about ALPS? --> please visit:
 # Thanks to
 
 - The AWS CDK Community for the repo tool [projen](https://github.com/projen/projen) which I use for this repo.
+
+# Limitations / TODO
+
+- Only ALPS yaml spec files are supported
