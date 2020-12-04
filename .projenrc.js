@@ -1,6 +1,7 @@
 const { TypeScriptProject } = require('projen');
 
 const deps = [
+  'editorconfig',
   'boxen',
   'chalk',
   'yamljs',
@@ -11,7 +12,7 @@ const project = new TypeScriptProject({
   name: 'alps-unified-ts',
   authorAddress: 'damadden88@googlemail.com',
   authorName: 'Martin Mueller',
-  defaultReleaseBranch: 'main',
+  defaultReleaseBranch: 'master',
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   deps: deps,
   // peerDeps: deps,
@@ -20,7 +21,8 @@ const project = new TypeScriptProject({
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',
   },
-  releaseBranches: ['main'],
+  releaseBranches: ['master'],
+  // releaseToNpm: true,
   keywords: [
     'cdk',
     'aws',
