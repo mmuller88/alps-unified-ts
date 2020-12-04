@@ -97,28 +97,38 @@ export class Alps {
 }
 
 export interface AlpsSpec {
-  alps: {
-    version: string;
-    doc: {
-      value: string;
-    };
-    ext: {
-      type: string;
-      name: string;
-      value: string;
-      tags: string;
-    }[];
-    descriptor: {
-      id: string;
-      type: string;
-      rt?: string;
-      text: string;
-      tags?: string;
-      descriptor?: {
-        href: string;
-      }[];
-    }[];
-  };
+  readonly alps: AlpsDef;
+}
+
+export interface AlpsDef {
+  readonly version: string;
+  readonly doc: DocDef;
+  readonly ext: ExtDef[];
+  readonly descriptor: DescriptorDefOuter[];
+};
+
+export interface DocDef {
+  readonly value: string;
+};
+
+export interface ExtDef {
+  readonly type: string;
+  readonly name: string;
+  readonly value: string;
+  readonly tags: string;
+}
+
+export interface DescriptorDefOuter {
+  readonly id: string;
+  readonly type: string;
+  readonly rt?: string;
+  readonly text: string;
+  readonly tags?: string;
+  readonly descriptor?: DescriptorDefInner[];
+}
+
+export interface DescriptorDefInner {
+  readonly href: string;
 }
 
 // *******************************************

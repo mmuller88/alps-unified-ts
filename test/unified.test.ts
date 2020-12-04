@@ -1,4 +1,4 @@
-import { Alps } from '../src';
+import { Alps, FormatType } from '../src';
 
 test('unified alps empty', () => {
   expect(() => {
@@ -8,6 +8,14 @@ test('unified alps empty', () => {
 
 test('unified alps from yaml file', () => {
   expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'))).toContain('Simple Todo list example');
+});
+
+test('unified alps from yaml file and convert to openapi', () => {
+  expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'), { formatType: FormatType.OPENAPI })).toContain('$ref: \'#/components/schemas/todoItem\'');
+});
+
+test('unified alps from yaml file and convert to graph ql schema', () => {
+  expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'), { formatType: FormatType.SDL })).toContain('type todoItem {');
 });
 
 test('unified alps from spec', () => {
