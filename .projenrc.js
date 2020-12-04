@@ -1,13 +1,5 @@
 const { JsiiProject } = require('projen');
 
-// const deps = [
-//   'editorconfig',
-//   'boxen',
-//   'chalk',
-//   'yamljs',
-//   'yargs@16.1.1',
-// ];
-
 const devDeps = [
   'js-yaml',
 ];
@@ -19,7 +11,6 @@ const project = new JsiiProject({
   defaultReleaseBranch: 'master',
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   devDeps: devDeps,
-  // deps: deps,
   python: {
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',
