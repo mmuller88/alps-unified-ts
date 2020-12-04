@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.4 (2020-12-04)
+
+
+### Features
+
+* write unit tests and fix unified ([de699f4](https://github.com/mmuller88/alps-unified-ts/commit/de699f47944cd9ea77181127867dfa43291a3801))
+
 ### [0.0.3](https://github.com/mmuller88/alps-unified-ts/compare/v0.0.1...v0.0.3) (2020-12-04)
 
 
