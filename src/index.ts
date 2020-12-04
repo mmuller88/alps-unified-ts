@@ -26,13 +26,12 @@ export class Alps {
   /**
    * Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema
    *
-   * @param alpsSpec The ALPS spec file. Only YAML is supported
+   * @param alpsDocument The ALPS document.
    * @param options Options for the convertion
    * @return the requested api in string format
    */
-  public static unified(alpsSpec: string, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
+  public static unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
 
-    const alpsDocument = loadYaml(alpsSpec);
     let rtn = '';
     // process requested translation
     switch (options?.formatType) {
@@ -69,6 +68,27 @@ export class Alps {
     }
     //console.log(`rtn: ${rtn}`);
     return rtn;
+  }
+
+  /**
+   * loads the ALPS document
+   * 
+   * @param path ALPS spec file path
+   */
+  public static loadYaml(path: string) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs');
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const yaml = require('js-yaml');
+
+    try {
+      let fileContents = fs.readFileSync(path, 'utf8');
+      let data = yaml.safeLoad(fileContents);
+      // console.log(JSON.stringify(data));
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 
@@ -513,18 +533,3 @@ function rString(id: string) {
   return rtn;
 }
 
-function loadYaml(path: string) {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const fs = require('fs');
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const yaml = require('js-yaml');
-
-  try {
-    let fileContents = fs.readFileSync(path, 'utf8');
-    let data = yaml.safeLoad(fileContents);
-    // console.log(JSON.stringify(data));
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-}

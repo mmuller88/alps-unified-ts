@@ -7,5 +7,5 @@ test('unified alps empty', () => {
 });
 
 test('unified alps ok', () => {
-  expect(Alps.unified('test/todo-alps.yaml')).toContain('Simple Todo list example');
+  expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'))).toContain('Simple Todo list example');
 });

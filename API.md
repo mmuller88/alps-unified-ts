@@ -41,15 +41,28 @@ new Alps()
 ### Methods
 
 
-#### *static* unified(alpsSpec, options?) <a id="alps-unified-ts-alps-unified"></a>
+#### *static* loadYaml(path) <a id="alps-unified-ts-alps-loadyaml"></a>
+
+
+
+```ts
+static loadYaml(path: string): any
+```
+
+* **path** (<code>string</code>)  *No description*
+
+__Returns__:
+* <code>any</code>
+
+#### *static* unified(alpsDocument, options?) <a id="alps-unified-ts-alps-unified"></a>
 
 Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema.
 
 ```ts
-static unified(alpsSpec: string, options?: ConvertOptions): string
+static unified(alpsDocument: any, options?: ConvertOptions): string
 ```
 
-* **alpsSpec** (<code>string</code>)  The ALPS spec file.
+* **alpsDocument** (<code>any</code>)  The ALPS document.
 * **options** (<code>[ConvertOptions](#alps-unified-ts-convertoptions)</code>)  Options for the convertion.
   * **formatType** (<code>[FormatType](#alps-unified-ts-formattype)</code>)  *No description* 
 
