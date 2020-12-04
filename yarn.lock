@@ -3535,7 +3535,7 @@ js-tokens@^4.0.0:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-js-yaml@^3.13.1:
+js-yaml@*, js-yaml@^3.13.1:
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.0.tgz#a7a34170f26a21bb162424d8adacb4113a69e482"
   integrity sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==
@@ -4664,10 +4664,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.6.1.tgz#83920c68dc1b58cbc50431e42b7d8b91ed0de071"
-  integrity sha512-IWXAULA5nAmZmfDQA9d4vkGzh73TBbIIWBA1+C6UtIFDf9rEeJHy3Nq0Msa0e9ZiKatJ+I9Qymv2kfiortJPgA==
+projen@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.6.3.tgz#4c0bea8c54f3c60745334d12de3301690506bf82"
+  integrity sha512-fd+F+K5RvjP7P++sRIf+tIF+YGDYgoTsucUInZBNUnlRQfpB0Hq0D0WHqh2C2MQ8lDUkQUZg6sdRWf7aQymOCw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"

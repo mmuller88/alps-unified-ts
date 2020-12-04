@@ -30,7 +30,7 @@ export class Alps {
    * @param options Options for the convertion
    * @return the requested api
    */
-  public static unified(alpsDocument: string, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
+  public static unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
     let rtn = '';
     // process requested translation
     switch (options?.formatType) {
@@ -65,8 +65,8 @@ export class Alps {
       default:
         console.log(`ERROR: unknown format: ${options?.formatType}`);
     }
-    rtn;
-    return JSON.parse(rtn);
+    //console.log(`rtn: ${rtn}`);
+    return rtn;
   }
 }
 
@@ -114,7 +114,7 @@ function toProto(doc: any) {
 
   // preamble
   rtn += 'syntax = "proto3";\n';
-  rtn += `package ${doc.alps.ext.filter(metadata_title)[0].value.replace(/ /g, '_')||'ALPS_API'};\n`;
+  rtn += `package ${doc.alps.ext.filter(metadata_title)[0].value.replace(/ /g, '_') || 'ALPS_API'};\n`;
   rtn += '\n';
 
   // signature
@@ -128,7 +128,7 @@ function toProto(doc: any) {
 
   // params
   coll = doc.alps.descriptor.filter(semantic);
-  coll.forEach(function(msg: any) {
+  coll.forEach(function (msg: any) {
     rtn += `message ${msg.id}Params {\n`;
     var c = 0;
     c++;
@@ -139,10 +139,10 @@ function toProto(doc: any) {
 
   // objects
   coll = doc.alps.descriptor.filter(groups);
-  coll.forEach(function(msg: any) {
+  coll.forEach(function (msg: any) {
     rtn += `message ${msg.id} {\n`;
     var c = 0;
-    msg.descriptor.forEach(function(prop: any) {
+    msg.descriptor.forEach(function (prop: any) {
       c++;
       rtn += `  string ${prop.href} = ${c};\n`;
     });
@@ -155,10 +155,10 @@ function toProto(doc: any) {
   rtn += '\n';
 
   // procedures
-  rtn += `service ${doc.alps.ext.filter(metadata_title)[0].value.replace(/ /g, '_')||'ALPS_API'}_Service {\n`;
+  rtn += `service ${doc.alps.ext.filter(metadata_title)[0].value.replace(/ /g, '_') || 'ALPS_API'}_Service {\n`;
 
   coll = doc.alps.descriptor.filter(safe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  rpc ${item.id}(`;
     if (item.descriptor) {
       rtn += item.descriptor[0].href;
@@ -169,7 +169,7 @@ function toProto(doc: any) {
   });
 
   coll = doc.alps.descriptor.filter(unsafe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  rpc ${item.id}(`;
     if (item.descriptor) {
       rtn += item.descriptor[0].href;
@@ -178,7 +178,7 @@ function toProto(doc: any) {
   });
 
   coll = doc.alps.descriptor.filter(idempotent);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  rpc ${item.id}(`;
     if (item.descriptor) {
       rtn += item.descriptor[0].href;
@@ -217,9 +217,9 @@ function toSDL(doc: any) {
 
   // types
   coll = doc.alps.descriptor.filter(groups);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `type ${item.id} {\n`;
-    item.descriptor.forEach(function(prop: any) {
+    item.descriptor.forEach(function (prop: any) {
       rtn += `  ${prop.href}: String!\n`;
     });
     rtn += '}\n';
@@ -228,7 +228,7 @@ function toSDL(doc: any) {
 
   // query
   coll = doc.alps.descriptor.filter(safe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += 'type Query {\n';
     rtn += `  ${item.id}: [${item.rt}]\n`;
     rtn += '}\n';
@@ -238,7 +238,7 @@ function toSDL(doc: any) {
   // mutations
   rtn += 'type Mutation {\n';
   coll = doc.alps.descriptor.filter(unsafe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  ${item.id}(`;
     if (item.descriptor) {
       rtn += `${item.descriptor[0].href}: String!`;
@@ -246,7 +246,7 @@ function toSDL(doc: any) {
     rtn += `): ${item.rt}\n`;
   });
   coll = doc.alps.descriptor.filter(idempotent);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  ${item.id}(`;
     if (item.descriptor) {
       rtn += `${item.descriptor[0].href}: String!`;
@@ -292,8 +292,8 @@ function toOAS(doc: any) {
 
   // info section
   rtn += 'info:\n';
-  rtn += `  title: ${doc.alps.ext.filter(metadata_title)[0].value||'ALPS API'}\n`;
-  rtn += `  description: ${doc.alps.doc.value||'Generated from ALPS file'}\n`;
+  rtn += `  title: ${doc.alps.ext.filter(metadata_title)[0].value || 'ALPS API'}\n`;
+  rtn += `  description: ${doc.alps.doc.value || 'Generated from ALPS file'}\n`;
   rtn += '  version: 1.0.0\n';
   rtn += '\n';
 
@@ -308,10 +308,10 @@ function toOAS(doc: any) {
 
   // gets
   coll = doc.alps.descriptor.filter(safe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  /${item.id}:\n`;
     rtn += '    get:\n';
-    rtn += `      summary: '${item.text||item.id}'\n`;
+    rtn += `      summary: '${item.text || item.id}'\n`;
     rtn += `      operationId: ${item.id}\n`;
     rtn += '      responses:\n';
     rtn += '        200:\n';
@@ -321,21 +321,21 @@ function toOAS(doc: any) {
     rtn += '              schema:\n';
     rtn += '                type: array\n';
     rtn += '                items:\n';
-    rtn += `                  $ref: '??/components/schemas/${item.rt||item.returns}'\n`;
+    rtn += `                  $ref: '??/components/schemas/${item.rt || item.returns}'\n`;
   });
 
   // posts
   coll = doc.alps.descriptor.filter(unsafe);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  /${item.id}:\n`;
     rtn += '    post:\n';
-    rtn += `      summary: '${item.text||item.id}'\n`;
+    rtn += `      summary: '${item.text || item.id}'\n`;
     rtn += `      operationId: ${item.id}\n`;
     rtn += '      requestBody:\n';
     rtn += '        content:\n';
     rtn += '          application/json:\n';
     rtn += '            schema:\n';
-    rtn += `              $ref: '??/components/schemas/${item.rt||item.returns}'\n`;
+    rtn += `              $ref: '??/components/schemas/${item.rt || item.returns}'\n`;
     rtn += '      responses:\n';
     rtn += '        200:\n';
     rtn += `          description: add ${item.id}\n`;
@@ -344,21 +344,21 @@ function toOAS(doc: any) {
     rtn += '              schema:\n';
     rtn += '                type: array\n';
     rtn += '                items:\n';
-    rtn += `                  $ref: '??/components/schemas/${item.rt||item.returns}'\n`;
+    rtn += `                  $ref: '??/components/schemas/${item.rt || item.returns}'\n`;
   });
 
   // put
   coll = doc.alps.descriptor.filter(update);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  /${item.id}:\n`;
     rtn += '    put:\n';
-    rtn += `      summary: '${item.text||item.id}'\n`;
+    rtn += `      summary: '${item.text || item.id}'\n`;
     rtn += `      operationId: ${item.id}\n`;
     rtn += '      requestBody:\n';
     rtn += '        content:\n';
     rtn += '          application/json:\n';
     rtn += '            schema:\n';
-    rtn += `              $ref: '??/components/schemas/${item.rt||item.returns}'\n`;
+    rtn += `              $ref: '??/components/schemas/${item.rt || item.returns}'\n`;
     rtn += '      responses:\n';
     rtn += '        200:\n';
     rtn += `          description: add ${item.id}\n`;
@@ -367,18 +367,18 @@ function toOAS(doc: any) {
     rtn += '              schema:\n';
     rtn += '                type: array\n';
     rtn += '                items:\n';
-    rtn += `                  $ref: '??/components/schemas/${item.rt||item.returns}'\n`;
+    rtn += `                  $ref: '??/components/schemas/${item.rt || item.returns}'\n`;
   });
 
   // deletes
   coll = doc.alps.descriptor.filter(remove);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `  /${item.id}/{id}:\n`;
     rtn += '    delete:\n';
-    rtn += `      summary: '${item.text||item.id}'\n`;
+    rtn += `      summary: '${item.text || item.id}'\n`;
     rtn += `      operationId: ${item.id}\n`;
     rtn += '      parameters:\n';
-    item.descriptor.forEach(function(prop: any) {
+    item.descriptor.forEach(function (prop: any) {
       rtn += `        - name: ${prop.href}\n`;
       rtn += '          in: path\n';
       rtn += `          description: ${prop.href} of ${item.id}\n`;
@@ -396,14 +396,14 @@ function toOAS(doc: any) {
   rtn += 'components:\n';
   rtn += '  schemas:\n';
   coll = doc.alps.descriptor.filter(groups);
-  coll.forEach(function(item: any) {
+  coll.forEach(function (item: any) {
     rtn += `    ${item.id}:\n`;
     if (item.text) {
       rtn += `      description: ${item.text}\n`;
     }
     rtn += '      type: object\n';
     rtn += '      properties:\n';
-    item.descriptor.forEach(function(prop: any) {
+    item.descriptor.forEach(function (prop: any) {
       rtn += `          ${prop.href}:\n`;
       rtn += '            type: string\n';
       rtn += `            example: ${rString(prop.href)}\n`;
@@ -440,11 +440,11 @@ function toAsync(doc: any) {
 
   // info section
   rtn += 'info:\n';
-  rtn += `  title: ${doc.alps.ext.filter(metadata_title)[0].value||'ALPS API'}\n`;
-  rtn += `  description: ${doc.alps.doc.value||'Generated from ALPS file'}\n`;
+  rtn += `  title: ${doc.alps.ext.filter(metadata_title)[0].value || 'ALPS API'}\n`;
+  rtn += `  description: ${doc.alps.doc.value || 'Generated from ALPS file'}\n`;
   rtn += "  version: '1.0.0'\n";
-  rtn += `  baseTopic: ${doc.alps.ext.filter(metadata_name)[0].value||''}\n`;
-  rtn += `  host: ${doc.alps.ext.filter(metadata_root)[0].value||'http://localhost:8888/root'}\n`;
+  rtn += `  baseTopic: ${doc.alps.ext.filter(metadata_name)[0].value || ''}\n`;
+  rtn += `  host: ${doc.alps.ext.filter(metadata_root)[0].value || 'http://localhost:8888/root'}\n`;
   rtn += '  schemes:\n';
   rtn += "    - 'amqp'\n";
   rtn += "    - 'mqtt'\n";
@@ -484,26 +484,26 @@ function idempotent(doc: any) {
 }
 
 function remove(doc: any) {
-  return (doc.type === 'idempotent' && (doc.tags && doc.tags.indexOf('delete')!=-1));
+  return (doc.type === 'idempotent' && (doc.tags && doc.tags.indexOf('delete') != -1));
 }
 
 function update(doc: any) {
-  return (doc.type === 'idempotent' && (doc.tags && doc.tags.indexOf('update')!=-1));
+  return (doc.type === 'idempotent' && (doc.tags && doc.tags.indexOf('update') != -1));
 }
 
 function metadata_title(doc: any) {
-  return (doc.type ==='metadata' && (doc.name && doc.name === ('title')));
+  return (doc.type === 'metadata' && (doc.name && doc.name === ('title')));
 }
 function metadata_root(doc: any) {
-  return (doc.type ==='metadata' && (doc.name && doc.name === ('root')));
+  return (doc.type === 'metadata' && (doc.name && doc.name === ('root')));
 }
 function metadata_name(doc: any) {
-  return (doc.type ==='metadata' && (doc.name && doc.name === ('name')));
+  return (doc.type === 'metadata' && (doc.name && doc.name === ('name')));
 }
 
 function rString(id: string) {
   var rtn = '';
-  if (id && id.indexOf('id')!=-1) {
+  if (id && id.indexOf('id') != -1) {
     rtn = Math.random().toString(9).substring(2, 4) + Math.random().toString(9).substring(2, 4);
   } else {
     rtn = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);

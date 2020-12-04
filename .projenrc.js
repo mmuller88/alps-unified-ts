@@ -8,12 +8,17 @@ const { JsiiProject } = require('projen');
 //   'yargs@16.1.1',
 // ];
 
+const devDeps = [
+  'js-yaml',
+];
+
 const project = new JsiiProject({
   name: 'alps-unified-ts',
   authorAddress: 'damadden88@googlemail.com',
   authorName: 'Martin Mueller',
   defaultReleaseBranch: 'master',
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
+  devDeps: devDeps,
   // deps: deps,
   python: {
     distName: 'alps-unified-ts',

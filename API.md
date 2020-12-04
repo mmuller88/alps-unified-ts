@@ -46,15 +46,15 @@ new Alps()
 Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema.
 
 ```ts
-static unified(alpsDocument: string, options?: ConvertOptions): any
+static unified(alpsDocument: any, options?: ConvertOptions): string
 ```
 
-* **alpsDocument** (<code>string</code>)  The ALPS spec in json.
+* **alpsDocument** (<code>any</code>)  The ALPS spec in json.
 * **options** (<code>[ConvertOptions](#alps-unified-ts-convertoptions)</code>)  Options for the convertion.
   * **formatType** (<code>[FormatType](#alps-unified-ts-formattype)</code>)  *No description* 
 
 __Returns__:
-* <code>any</code>
+* <code>string</code>
 
 
 
