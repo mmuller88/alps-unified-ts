@@ -1,3 +1,6 @@
+[![NPM version](https://badge.fury.io/js/alps-unified-ts.svg)](https://badge.fury.io/js/alps-unified-ts)
+[![PyPI version](https://badge.fury.io/py/alps-unified-ts.svg)](https://badge.fury.io/py/alps-unified-ts)
+![Release](https://github.com/mmuller88/alps-unified-ts/workflows/Release/badge.svg)
 # alps-unified-ts
 That is an enhanced TypeScript library of [alps-unified](https://github.com/mamund/alps-unified).
 
