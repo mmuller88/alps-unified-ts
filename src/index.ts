@@ -22,7 +22,7 @@ const rxHash = /#/g;
 const rxQ = /\?\?/g;
 
 /**
- * Converts an ALPS spec JSON object into a specified API like openApi or graphql schema
+ * Converts an ALPS spec JSON object into a specified API like openApi or graph ql schema
  *
  * @param alpsDocument The ALPS spec in json
  * @param options
