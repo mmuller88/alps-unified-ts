@@ -109,8 +109,8 @@
         "module": "alps_unified_ts"
       },
       "dotnet": {
-        "namespace": "Acme.HelloNamespace",
-        "packageId": "Acme.HelloPackage"
+        "namespace": "com.github.mmuller88",
+        "packageId": "AlpsUnifiedTs"
       }
     },
     "tsc": {
