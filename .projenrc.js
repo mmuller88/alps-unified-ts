@@ -12,11 +12,11 @@ const project = new JsiiProject({
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   deps: deps,
   bundledDeps: deps,
-  // java: {
-  //   javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
-  //   mavenGroupId: 'com.github.mmuller88',
-  //   mavenArtifactId: 'alps-unified-ts',
-  // },
+  java: {
+    javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
+    mavenGroupId: 'com.github.mmuller88',
+    mavenArtifactId: 'alps-unified-ts',
+  },
   dotnet: {
     // dotNetNamespace: 'Acme.HelloNamespace',
     // packageId: 'Acme.HelloPackage',
@@ -29,8 +29,6 @@ const project = new JsiiProject({
   },
   releaseBranches: ['master'],
   keywords: [
-    'cdk',
-    'aws',
     'alps',
     'oas',
     'openapi',

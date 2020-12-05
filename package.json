@@ -58,8 +58,6 @@
   ],
   "keywords": [
     "alps",
-    "aws",
-    "cdk",
     "graphql",
     "mqtt",
     "oas",
@@ -104,6 +102,13 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "com.github.mmuller88.alpsUnifiedTs",
+        "maven": {
+          "groupId": "com.github.mmuller88",
+          "artifactId": "alps-unified-ts"
+        }
+      },
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
