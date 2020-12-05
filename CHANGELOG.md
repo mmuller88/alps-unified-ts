@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.8 (2020-12-04)
+
+
+### Features
+
+* change maven central badge ([0c1647c](https://github.com/mmuller88/alps-unified-ts/commit/0c1647c2766d327ad5f40bbf4f38978158976a25))
+
 ### 0.0.7 (2020-12-04)
 
 
