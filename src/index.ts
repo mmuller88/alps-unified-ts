@@ -97,6 +97,9 @@ export class Alps {
 }
 
 export interface AlpsSpec {
+  /**
+   * Indicates the root of the ALPS document. This property is REQUIRED, and it SHOULD have one or more 'descriptor' child properties.
+   */
   readonly alps: AlpsDef;
 }
 
@@ -108,10 +111,34 @@ export interface AlpsDef {
   readonly version: string;
   readonly doc: DocDef;
   readonly ext: ExtDef[];
-  readonly descriptor: DescriptorDefOuter[];
+  readonly descriptor: DescriptorDef[];
 };
 
+/**
+   * A text field that contains free-form, usually human-readable, text.
+   * The 'doc' element MAY have two properties: 'href' and 'format'.  If
+   * the 'href' property appears it SHOULD contain a dereferencable URL
+   * that points to human-readable text.  If the 'format' property appears
+   * it SHOULD contain one of the following values: 'text', 'html',
+   * 'asciidoc', or 'markdown'.  Any program processing 'doc' elements
+   * SHOULD honor the 'format' directive and parse/render the content
+   * appropriately.  If the value in the 'format' property is not
+   * recognized and/or supported, the processing program MUST treat the
+   * content as plain text.  If no 'format' property is present, the
+   * content SHOULD be treated as plain text.
+   * JSON:  { "doc" : { "format" : "text" , "value" : "Date of Birth ...""} }
+   *
+   * A 'doc' element SHOULD appear as a child of 'descriptor'.  When
+   * present, it describes the meaning and use of the related 'descriptor'.
+   * JSON:  { "descriptor" : [ { "doc" : { "value" : "..." } ...  ] }
+   *
+   * The 'doc' element MAY appear as a child of 'alps'.  When present, it
+   * describes the purpose of the ALPS document as a whole.
+   * JSON:  { "alps : { "doc" : { "value" : "..." } } ... }
+   */
 export interface DocDef {
+  readonly href?: string;
+  readonly format?: string;
   readonly value: string;
 };
 
@@ -120,19 +147,19 @@ export interface ExtDef {
   readonly name: string;
   readonly value: string;
   readonly tags: string;
+  readonly href?: string;
+  readonly id?: string;
 }
 
-export interface DescriptorDefOuter {
+export interface DescriptorDef {
   readonly id: string;
+  readonly doc?: DocDef;
   readonly type: string;
   readonly rt?: string;
   readonly text: string;
   readonly tags?: string;
-  readonly descriptor?: DescriptorDefInner[];
-}
-
-export interface DescriptorDefInner {
-  readonly href: string;
+  readonly descriptor?: DescriptorDef[];
+  readonly href?: string;
 }
 
 // *******************************************
