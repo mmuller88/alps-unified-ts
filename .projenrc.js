@@ -17,6 +17,12 @@ const project = new JsiiProject({
   //   mavenGroupId: 'com.github.mmuller88',
   //   mavenArtifactId: 'alps-unified-ts',
   // },
+  dotnet: {
+    // dotNetNamespace: 'Acme.HelloNamespace',
+    // packageId: 'Acme.HelloPackage',
+    dotNetNamespace: 'com.github.mmuller88',
+    packageId: 'AlpsUnifiedTs',
+  },
   python: {
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',

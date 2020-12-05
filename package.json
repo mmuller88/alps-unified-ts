@@ -107,6 +107,10 @@
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
+      },
+      "dotnet": {
+        "namespace": "Acme.HelloNamespace",
+        "packageId": "Acme.HelloPackage"
       }
     },
     "tsc": {
