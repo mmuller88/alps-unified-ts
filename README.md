@@ -18,8 +18,7 @@ Want to know more about ALPS? --> please visit:
 
 # Features
 
-- generating als unified libraries for JavaScript, TypeScript, Python, Java and .NET
-- releasing to NPM, Pypi and Maven Central (see top of Readme)
+- generating and publishing alps unified libraries for JavaScript, TypeScript, Python, Java and .NET
 - Type support for ALPS specs (see example 'Create from Spec' down below)
 
 # Examples
