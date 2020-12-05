@@ -21,7 +21,7 @@ const project = new JsiiProject({
     // dotNetNamespace: 'Acme.HelloNamespace',
     // packageId: 'Acme.HelloPackage',
     dotNetNamespace: 'com.github.mmuller88',
-    packageId: 'AlpsUnifiedTs',
+    packageId: 'com.github.mmuller88.AlpsUnifiedTs',
   },
   python: {
     distName: 'alps-unified-ts',

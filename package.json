@@ -110,7 +110,7 @@
       },
       "dotnet": {
         "namespace": "com.github.mmuller88",
-        "packageId": "AlpsUnifiedTs"
+        "packageId": "com.github.mmuller88.AlpsUnifiedTs"
       }
     },
     "tsc": {
