@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.11 (2020-12-05)
+
+
+### Features
+
+* try adding .net publishing ([aa44c91](https://github.com/mmuller88/alps-unified-ts/commit/aa44c91ae21a86e88e85f50d9e3343c61d9bd58d))
+
 ### 0.0.10 (2020-12-05)
 
 
