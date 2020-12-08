@@ -11,6 +11,9 @@ const project = new JsiiProject({
   defaultReleaseBranch: 'master',
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   deps: deps,
+  // devDeps: [
+  //   'jsii-release',
+  // ],
   bundledDeps: deps,
   java: {
     javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
