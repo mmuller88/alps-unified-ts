@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/mmuller88/alps-unified-ts/compare/v0.0.14...v0.0.16) (2020-12-08)
+
+
+### Features
+
+* test release to maven again ([af0d2e3](https://github.com/mmuller88/alps-unified-ts/commit/af0d2e35077be760e8b45e64650d356f37d8b573))
+* test release to maven again ([cc2db24](https://github.com/mmuller88/alps-unified-ts/commit/cc2db2417102debe93b2a84cf79060e0d5ce9d39))
+
 ### 0.0.15 (2020-12-08)
 
 ### 0.0.14 (2020-12-06)
