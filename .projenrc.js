@@ -18,8 +18,6 @@ const project = new JsiiProject({
     mavenArtifactId: 'alps-unified-ts',
   },
   dotnet: {
-    // dotNetNamespace: 'Acme.HelloNamespace',
-    // packageId: 'Acme.HelloPackage',
     dotNetNamespace: 'com.github.mmuller88',
     packageId: 'com.github.mmuller88.AlpsUnifiedTs',
   },
