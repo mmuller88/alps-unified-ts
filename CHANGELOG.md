@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.17 (2020-12-08)
+
+
+### Features
+
+* update jsii-release ([33d0056](https://github.com/mmuller88/alps-unified-ts/commit/33d0056805252379b48fb3b5376b241ba59b92cc))
+
 ### [0.0.16](https://github.com/mmuller88/alps-unified-ts/compare/v0.0.14...v0.0.16) (2020-12-08)
 
 
