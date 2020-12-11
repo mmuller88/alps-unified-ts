@@ -84,6 +84,8 @@ Alps.unified(
 For Python to benefit from the types better do this:
 
 ```python
+import alps_unified_ts as alps
+
 alps_def = alps.AlpsDef(
     version='1.0',
     descriptor=[alps.DescriptorDef(id="id", type="semantic", text="sotrage id of todo item")],
