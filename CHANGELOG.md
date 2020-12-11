@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/mmuller88/alps-unified-ts/compare/v0.0.19...v0.0.20) (2020-12-11)
+
+
+### Features
+
+* new FormatType.OPENAPI_JSON for converting to an JSON string ([f66ca57](https://github.com/mmuller88/alps-unified-ts/commit/f66ca5714e66cc5fb0d311b2e10c799a1d7d5f06))
+
 ### 0.0.19 (2020-12-11)
 
 
