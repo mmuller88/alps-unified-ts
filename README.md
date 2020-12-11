@@ -81,6 +81,29 @@ Alps.unified(
 );
 ```
 
+For Python to benefit from the types better do this:
+
+```python
+alps_def = alps.AlpsDef(
+    version='1.0',
+    descriptor=[alps.DescriptorDef(id="id", type="semantic", text="sotrage id of todo item")],
+    doc=alps.DocDef(
+        value="Simple Todo list example"),
+        ext=[
+            alps.ExtDef(
+                name="root",
+                tags="oas",
+                type="metadata",
+                value="http://api.example.org/todo"),
+            alps.ExtDef(
+                name="title",
+                tags="oas",
+                type="metadata",
+                value="simpleTodo")])
+
+alps.Alps.unified(alps_document=alps.Alps.spec(alps=alps_def), format_type=alps.FormatType.OPENAPI)
+```
+
 # Thanks to
 
 - The AWS CDK Community for the repo tool [projen](https://github.com/projen/projen) which I use for this repo.
