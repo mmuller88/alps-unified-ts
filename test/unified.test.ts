@@ -14,6 +14,10 @@ test('unified alps from yaml file and convert to openapi', () => {
   expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'), { formatType: FormatType.OPENAPI })).toContain('$ref: \'#/components/schemas/todoItem\'');
 });
 
+test('unified alps from yaml file and convert to json openapi', () => {
+  expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'), { formatType: FormatType.OPENAPI_JSON })).toContain('{\"$ref\":\"#/components/schemas/todoItem\"}');
+});
+
 test('unified alps from yaml file and convert to graph ql schema', () => {
   expect(Alps.unified(Alps.loadYaml('test/todo-alps.yaml'), { formatType: FormatType.SDL })).toContain('type todoItem {');
 });

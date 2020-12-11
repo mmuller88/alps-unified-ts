@@ -12,6 +12,7 @@ export enum FormatType {
   S, SDL,
   A, ASYNC, ASYNCAPI,
   O, OAS, OPEN, OPENAPI,
+  OPENAPI_JSON,
   P, PROTO,
   J, JSON,
   W, WSDL, SOAP
@@ -28,7 +29,7 @@ export class Alps {
    *
    * @param alpsDocument The ALPS document.
    * @param options Options for the convertion
-   * @return the requested api in string format
+   * @return the requested api as a string
    */
   public static unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
 
@@ -49,6 +50,13 @@ export class Alps {
       case FormatType.OPEN:
       case FormatType.OPENAPI:
         rtn = toOAS(alpsDocument);
+        break;
+      case FormatType.OPENAPI_JSON:
+        rtn = toOAS(alpsDocument);
+        // convert yaml string to json
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
+        const yaml = require('js-yaml');
+        rtn = JSON.stringify(yaml.safeLoad(rtn));
         break;
       case FormatType.P:
       case FormatType.PROTO:

@@ -223,6 +223,7 @@ Name | Description
 **OAS** |
 **OPEN** |
 **OPENAPI** |
+**OPENAPI_JSON** |
 **P** |
 **PROTO** |
 **J** |
