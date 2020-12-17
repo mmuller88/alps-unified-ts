@@ -15,11 +15,11 @@ const project = new JsiiProject({
   //   'jsii-release',
   // ],
   bundledDeps: deps,
-  // java: {
-  //   javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
-  //   mavenGroupId: 'com.github.mmuller88',
-  //   mavenArtifactId: 'alps-unified-ts',
-  // },
+  java: {
+    javaPackage: 'com.github.mmuller88.alpsUnifiedTs',
+    mavenGroupId: 'com.github.mmuller88',
+    mavenArtifactId: 'alps-unified-ts',
+  },
   dotnet: {
     dotNetNamespace: 'com.github.mmuller88',
     packageId: 'com.github.mmuller88.AlpsUnifiedTs',

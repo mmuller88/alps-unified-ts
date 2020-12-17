@@ -42,7 +42,7 @@
     "jsii-diff": "^1.15.0",
     "jsii-docgen": "^1.4.108",
     "jsii-pacmak": "^1.15.0",
-    "jsii-release": "0.2.4",
+    "jsii-release": "^0.2.8",
     "json-schema": "^0.2.5",
     "projen": "^0.6.8",
     "standard-version": "^9.0.0",
@@ -102,6 +102,13 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "com.github.mmuller88.alpsUnifiedTs",
+        "maven": {
+          "groupId": "com.github.mmuller88",
+          "artifactId": "alps-unified-ts"
+        }
+      },
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
