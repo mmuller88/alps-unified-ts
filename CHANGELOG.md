@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.29 (2020-12-17)
+
+
+### Features
+
+* try changing to AwsCdkConstructLibrary ([b65353e](https://github.com/mmuller88/alps-unified-ts/commit/b65353e02e8ffa9cb103d914c5be8709a1f5f7f0))
+
 ### 0.0.28 (2020-12-17)
 
 ### 0.0.27 (2020-12-17)
