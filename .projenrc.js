@@ -1,20 +1,23 @@
-const { JsiiProject } = require('projen');
+const { AwsCdkConstructLibrary } = require('projen');
 
 const deps = [
   'js-yaml',
 ];
 
-const project = new JsiiProject({
+const project = new AwsCdkConstructLibrary({
+  cdkVersion: '1.79.0',
   name: 'alps-unified-ts',
   authorAddress: 'damadden88@googlemail.com',
   authorName: 'Martin Mueller',
-  defaultReleaseBranch: 'master',
   repository: 'https://github.com/mmuller88/alps-unified-ts.git',
   deps: deps,
   // devDeps: [
   //   'jsii-release',
   // ],
   bundledDeps: deps,
+  // peerDependencyOptions: {
+  //   pinnedDevDependency: false,
+  // },
   java: {
     javaPackage: 'com.github.mmuller88.alps',
     mavenGroupId: 'com.github.mmuller88',
