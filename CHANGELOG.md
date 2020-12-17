@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.25 (2020-12-17)
+
+
+### Bug Fixes
+
+* Try older jsii release version for push to Maven ([138a3d3](https://github.com/mmuller88/alps-unified-ts/commit/138a3d3f61280d6bffaa74ae03c77bb24cde452f))
+
 ### 0.0.24 (2020-12-17)
 
 ### 0.0.23 (2020-12-17)
