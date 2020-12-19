@@ -15,14 +15,14 @@ const project = new JsiiProject({
   // ],
   bundledDeps: deps,
   java: {
-    javaPackage: 'a.c',
-    mavenGroupId: 'b',
-    mavenArtifactId: 'd',
+    javaPackage: 'com.github.mmuller88.alps',
+    mavenGroupId: 'com.github.mmuller88',
+    mavenArtifactId: 'alps-unified-ts',
   },
-  // dotnet: {
-  //   dotNetNamespace: 'com.github.mmuller88',
-  //   packageId: 'com.github.mmuller88.AlpsUnifiedTs',
-  // },
+  dotnet: {
+    dotNetNamespace: 'com.github.mmuller88',
+    packageId: 'com.github.mmuller88.AlpsUnifiedTs',
+  },
   python: {
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',

@@ -28,11 +28,11 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/jest": "^26.0.16",
+    "@types/jest": "^26.0.19",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
-    "eslint": "^7.14.0",
+    "eslint": "^7.16.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -40,7 +40,7 @@
     "jest-junit": "^12",
     "jsii": "^1.16.0",
     "jsii-diff": "^1.16.0",
-    "jsii-docgen": "^1.5.3",
+    "jsii-docgen": "^1.5.4",
     "jsii-pacmak": "^1.16.0",
     "jsii-release": "^0.2.8",
     "json-schema": "^0.2.5",
@@ -51,7 +51,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "js-yaml": "^3.14.0"
+    "js-yaml": "^3.14.1"
   },
   "bundledDependencies": [
     "js-yaml"
@@ -103,15 +103,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "a.c",
+        "package": "com.github.mmuller88.alps",
         "maven": {
-          "groupId": "b",
-          "artifactId": "d"
+          "groupId": "com.github.mmuller88",
+          "artifactId": "alps-unified-ts"
         }
       },
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
+      },
+      "dotnet": {
+        "namespace": "com.github.mmuller88",
+        "packageId": "com.github.mmuller88.AlpsUnifiedTs"
       }
     },
     "tsc": {
