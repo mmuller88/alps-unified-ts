@@ -40,4 +40,30 @@ const project = new JsiiProject({
 
 });
 
+project.github.addMergifyRules({
+  name: 'Label core contributions',
+  actions: {
+    label: {
+      add: ['contribution/core'],
+    },
+  },
+  conditions: [
+    'author~=^(mmuller88)$',
+    'label!=contribution/core',
+  ],
+});
+
+project.github.addMergifyRules({
+  name: 'Label auto-merge for core',
+  actions: {
+    label: {
+      add: ['auto-merge'],
+    },
+  },
+  conditions: [
+    'label=contribution/core',
+    'label!=auto-merge',
+  ],
+});
+
 project.synth();
