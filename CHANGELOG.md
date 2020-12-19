@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.33 (2020-12-19)
+
+
+### Features
+
+* try different java settings ([9628e08](https://github.com/mmuller88/alps-unified-ts/commit/9628e08306cd389e4a92c6ee63464461fe5e3137))
+
 ### 0.0.32 (2020-12-19)
 
 ### 0.0.31 (2020-12-19)
