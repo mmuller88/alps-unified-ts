@@ -102,13 +102,16 @@
   "jsii": {
     "outdir": "dist",
     "targets": {
+      "java": {
+        "package": "a.c",
+        "maven": {
+          "groupId": "b",
+          "artifactId": "d"
+        }
+      },
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
-      },
-      "dotnet": {
-        "namespace": "com.github.mmuller88",
-        "packageId": "com.github.mmuller88.AlpsUnifiedTs"
       }
     },
     "tsc": {
