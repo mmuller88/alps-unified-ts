@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.36 (2020-12-19)
+
+
+### Features
+
+* publish maven too ([4ec0577](https://github.com/mmuller88/alps-unified-ts/commit/4ec05775cbb5e63bf54a720eaea75baa52e10d60))
+
 ### 0.0.35 (2020-12-19)
 
 ### 0.0.34 (2020-12-19)
