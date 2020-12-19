@@ -8,7 +8,7 @@
 
 That is an enhanced TypeScript library of [alps-unified](https://github.com/mamund/alps-unified). With it you can convert an ALPS API spec to other API spec like openApi, Graph QL Schema.
 
-Very useful to understand the idea of ALPS API is this video on YT: https://www.youtube.com/watch?v=oG6-r3UdenE
+Very useful to understand the idea of ALPS API is this video on YouTube: https://www.youtube.com/watch?v=oG6-r3UdenE
 
 Want to know more about ALPS? --> please visit:
 
