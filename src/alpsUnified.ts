@@ -33,6 +33,7 @@ export class Alps {
    */
   public static unified(alpsDocument: any, options: ConvertOptions = { formatType: FormatType.OPENAPI }) {
 
+    return 'bla';
     let rtn = '';
     // process requested translation
     switch (options?.formatType) {

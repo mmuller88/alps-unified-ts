@@ -14,15 +14,16 @@ const project = new JsiiProject({
   //   'jsii-release',
   // ],
   bundledDeps: deps,
+  // projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   java: {
     javaPackage: 'com.github.mmuller88.alps',
     mavenGroupId: 'com.github.mmuller88',
     mavenArtifactId: 'alps-unified-ts',
   },
-  dotnet: {
-    dotNetNamespace: 'com.github.mmuller88',
-    packageId: 'com.github.mmuller88.AlpsUnifiedTs',
-  },
+  // dotnet: {
+  //   dotNetNamespace: 'com.github.mmuller88',
+  //   packageId: 'com.github.mmuller88.AlpsUnifiedTs',
+  // },
   python: {
     distName: 'alps-unified-ts',
     module: 'alps_unified_ts',

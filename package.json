@@ -112,10 +112,6 @@
       "python": {
         "distName": "alps-unified-ts",
         "module": "alps_unified_ts"
-      },
-      "dotnet": {
-        "namespace": "com.github.mmuller88",
-        "packageId": "com.github.mmuller88.AlpsUnifiedTs"
       }
     },
     "tsc": {
