@@ -1,6 +1,6 @@
 [![NPM version](https://badge.fury.io/js/alps-unified-ts.svg)](https://badge.fury.io/js/alps-unified-ts)
 [![PyPI version](https://badge.fury.io/py/alps-unified-ts.svg)](https://badge.fury.io/py/alps-unified-ts)
-[![Maven version](https://maven-badges.herokuapp.com/maven-central/com.github.mmuller88.alpsUnifiedTs/alps-unified-ts/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.mmuller88.alpsUnifiedTs/alps-unified-ts)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mmuller88/alps-unified-ts/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.mmuller88/alps-unified-ts)
 [![.NET version](https://img.shields.io/nuget/v/com.github.mmuller88.AlpsUnifiedTs.svg?style=flat-square)](https://www.nuget.org/packages/com.github.mmuller88.AlpsUnifiedTs/)
 ![Release](https://github.com/mmuller88/alps-unified-ts/workflows/Release/badge.svg)
 
