@@ -561,6 +561,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/fs-extra@^8.0.0":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.1.1.tgz#1e49f22d09aa46e19b51c0b013cb63d0d923a068"
+  integrity sha512-TcUlBem321DFQzBNuz8p0CLLKp0VvF/XH9E4KHNmgwyp4E3AfgI5cjiIVZWlbfThBop2qxFIh4+LeY6hVWWZ2w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.4.tgz#4ff9f641a7c6d1a3508ff88bc3141b152772e753"
@@ -2381,7 +2388,7 @@ fs-access@^1.0.1:
   dependencies:
     null-check "^1.0.0"
 
-fs-extra@^8.1.0:
+fs-extra@^8.0.0, fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
   integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
@@ -3635,9 +3642,13 @@ jsii-reflect@^1.16.0, jsii-reflect@^1.9.0:
     yargs "^16.1.1"
 
 jsii-release@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.8.tgz#f6115f0f34bbf2fc70cd8dae7e34fce4a928eb1f"
-  integrity sha512-rj2YcjuPBkhbQ6vJknP8I6go8MNkPBTvFtP0qDtZ+kmxkRsnXs5HdcTQIl6oI2oCeasCWfidjR+htp0Dd/+O3w==
+  version "0.2.32"
+  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.32.tgz#cce885940f049ed3f1cfa53d3eb7601d2e08950e"
+  integrity sha512-B1UcKrZsb4LEJjlYtvt3u6g7lgN3AqfAcjt9NPTcTlJLc/p7DQKSMm+x5+GFprcQYVGDGHcaGJZDvVvZ6//teQ==
+  dependencies:
+    "@types/fs-extra" "^8.0.0"
+    fs-extra "^8.0.0"
+    shlex "^2.0.2"
 
 jsii-rosetta@^1.16.0:
   version "1.16.0"
@@ -5141,6 +5152,11 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+shlex@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/shlex/-/shlex-2.0.2.tgz#debf51a145f1df9e7cb7cce04340ccb45120092d"
+  integrity sha512-i4p9nNXgBTILspHwZlBCNsZzwuVWW8SFx5dyIONrjL0R+AbMOPbg7ndqgGfjYivkYRTtZMKqIT8HT+QyOhPQWA==
 
 side-channel@^1.0.3:
   version "1.0.3"
